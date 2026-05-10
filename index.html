@@ -1,1 +1,783 @@
-BroskiFence.com is under construction.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Broski Fence | Kansas City Commercial Fencing</title>
+  <meta name="description" content="Kansas City's commercial fencing experts. 25+ years serving the KC metro with chain link, wood, and metal fencing for contractors, municipalities, and businesses." />
+
+  <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID before launch -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:     #004F94;
+      --blue-dk:  #003d75;
+      --gold:     #F5A623;
+      --dark:     #1A1A1A;
+      --charcoal: #2C2C2C;
+      --mid:      #555555;
+      --light:    #F5F5F5;
+      --white:    #ffffff;
+      --pad:      80px 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--dark); background: var(--white); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background-color: rgba(26,26,26,0.97);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+    }
+    .nav-logo img { height: 42px; display: block; }
+    .nav-links { list-style: none; display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      color: var(--white); text-decoration: none;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--blue); color: var(--white) !important;
+      padding: 10px 22px; border-radius: 3px;
+    }
+    .nav-cta:hover { background: var(--blue-dk) !important; color: var(--white) !important; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; height: 100vh; min-height: 620px;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: url('images/ChainLink1.jpeg') center 40% / cover no-repeat;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.58) 0%, rgba(20,20,20,0.75) 65%, rgba(20,20,20,0.88) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 820px; padding: 0 24px; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--gold); color: var(--dark);
+      font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 2px; margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(42px, 7vw, 74px);
+      font-weight: 700; color: var(--white); line-height: 1.05;
+      margin-bottom: 22px; text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.65;
+      max-width: 600px; margin: 0 auto 36px;
+    }
+    .btn {
+      display: inline-block; text-decoration: none;
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 15px; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 15px 40px; border-radius: 3px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6); margin-left: 14px;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+    .btn-white { background: var(--white); color: var(--blue); }
+    .btn-white:hover { background: var(--light); }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-dark:hover { background: var(--charcoal); }
+
+    .hero-stats {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: var(--blue-dk); display: flex; justify-content: center;
+    }
+    .hero-stats .stat {
+      padding: 18px 48px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-stats .stat:last-child { border-right: none; }
+    .hero-stats .num {
+      font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 700;
+      color: var(--gold);
+    }
+    .hero-stats .lbl {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 3px;
+    }
+
+    /* ─── SECTION BASICS ─── */
+    section { padding: var(--pad); }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 700; line-height: 1.08; margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 17px; color: var(--mid); line-height: 1.75;
+      max-width: 680px; margin-bottom: 48px;
+    }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--light); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 26px; margin-bottom: 36px;
+    }
+    .service-card {
+      background: var(--white); border-radius: 6px;
+      overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: box-shadow 0.25s;
+    }
+    .service-card:hover { box-shadow: 0 6px 30px rgba(0,0,0,0.13); }
+    .service-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .service-card-body { padding: 24px; }
+    .service-card h3 {
+      font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 10px;
+    }
+    .service-card p { font-size: 15px; color: var(--mid); line-height: 1.65; }
+    .commercial-tag {
+      display: inline-block;
+      background: var(--dark); color: var(--white);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 2px; margin-bottom: 14px;
+    }
+
+    /* Materials callout */
+    .materials-callout {
+      background: var(--white); border: 1px solid #e2e2e2;
+      border-left: 4px solid var(--gold); border-radius: 4px;
+      padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      flex-wrap: wrap;
+    }
+    .materials-callout h3 {
+      font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 8px;
+    }
+    .materials-callout p { font-size: 15px; color: var(--mid); line-height: 1.65; max-width: 580px; }
+
+    /* ─── WHO WE SERVE ─── */
+    #who-we-serve { background: var(--dark); }
+    #who-we-serve h2 { color: var(--white); }
+    #who-we-serve .lead { color: rgba(255,255,255,0.62); }
+    .serve-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    @media (max-width: 640px) {
+      .serve-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .serve-item {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 28px 20px; text-align: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .serve-item:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+    .serve-icon { font-size: 30px; margin-bottom: 14px; }
+    .serve-item h4 {
+      font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .serve-item p { font-size: 13px; color: rgba(255,255,255,0.48); line-height: 1.55; }
+
+    /* ─── WORK GRID ─── */
+    #work { background: var(--white); }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 270px 270px;
+      gap: 10px;
+    }
+    .work-item { overflow: hidden; border-radius: 4px; }
+    .work-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.45s ease;
+    }
+    .work-item:hover img { transform: scale(1.05); }
+    .work-item.large { grid-column: span 2; }
+
+    /* ─── SERVICE AREA ─── */
+    #service-area { background: var(--light); }
+    .area-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .city-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px;
+      list-style: none; margin-top: 24px;
+    }
+    .city-list li {
+      font-size: 15px; color: var(--mid);
+      padding: 7px 0; border-bottom: 1px solid #e4e4e4;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .city-list li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 14px; }
+    .area-cta-box {
+      background: var(--blue); border-radius: 8px;
+      padding: 48px 40px; text-align: center;
+    }
+    .area-cta-box h3 {
+      font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700;
+      color: var(--white); margin-bottom: 14px;
+    }
+    .area-cta-box p {
+      color: rgba(255,255,255,0.8); font-size: 16px; line-height: 1.65; margin-bottom: 28px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--white); }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .about-img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
+    .about-img img { width: 100%; height: 440px; object-fit: cover; display: block; }
+    .about-copy h2 { margin-bottom: 20px; }
+    .about-copy p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 16px; }
+    .about-badge {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--light); border-left: 4px solid var(--blue);
+      padding: 18px 22px; border-radius: 0 4px 4px 0; margin-top: 12px;
+    }
+    .about-badge .badge-num {
+      font-family: 'Oswald', sans-serif; font-size: 46px; font-weight: 700; color: var(--gold);
+    }
+    .about-badge .badge-text { font-size: 15px; font-weight: 600; color: var(--dark); line-height: 1.35; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--charcoal); }
+    #contact h2 { color: var(--white); }
+    #contact .lead { color: rgba(255,255,255,0.58); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .contact-info { display: flex; flex-direction: column; gap: 26px; }
+    .contact-block h4 {
+      font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--gold); margin-bottom: 6px;
+    }
+    .contact-block p, .contact-block a {
+      font-size: 16px; color: var(--white); text-decoration: none; line-height: 1.65;
+    }
+    .contact-block a:hover { color: var(--gold); }
+    .contact-note {
+      background: rgba(255,255,255,0.06); border-left: 3px solid var(--blue);
+      border-radius: 0 4px 4px 0; padding: 14px 18px;
+      font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;
+    }
+    form { display: flex; flex-direction: column; gap: 13px; }
+    form input, form textarea, form select {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.17);
+      color: var(--white); font-family: 'Open Sans', sans-serif; font-size: 15px;
+      padding: 13px 16px; border-radius: 4px;
+      transition: border-color 0.2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    form select option { background: var(--charcoal); color: var(--white); }
+    form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,0.32); }
+    form input:focus, form textarea:focus, form select:focus { outline: none; border-color: var(--blue); }
+    form textarea { resize: vertical; min-height: 120px; }
+    form button {
+      background: var(--blue); color: var(--white);
+      font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 15px 32px; border: none; border-radius: 3px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    form button:hover { background: var(--blue-dk); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark); padding: 32px 40px; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    footer img.logo { height: 34px; opacity: 0.8; }
+    .footer-nav { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
+    .footer-nav a {
+      font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-right { text-align: right; }
+    .footer-right p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; }
+    .footer-right a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-right a:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .area-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; }
+      .area-cta-box { margin-top: 8px; }
+    }
+    @media (max-width: 768px) {
+      :root { --pad: 60px 20px; }
+      nav { padding: 14px 20px; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--dark); padding: 12px 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block; padding: 12px 24px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+      .nav-cta { margin: 12px 24px 4px; text-align: center; border-radius: 3px; }
+      .hero-stats { flex-wrap: wrap; }
+      .hero-stats .stat {
+        flex: 1 1 50%; border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        padding: 14px 16px;
+      }
+      .work-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .work-grid .work-item { height: 180px; }
+      .work-item.large { grid-column: span 2; height: 220px; }
+      .btn-outline { display: none; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+      .footer-right { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .work-grid { grid-template-columns: 1fr; }
+      .work-item.large { grid-column: span 1; }
+      .hero-stats .stat { flex: 1 1 100%; }
+    }
+    /* ─── LIGHTBOX ─── */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.92);
+      align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.active { display: flex; }
+    #lightbox img {
+      max-width: 92vw; max-height: 90vh;
+      object-fit: contain; border-radius: 3px;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.6);
+      cursor: default;
+    }
+    #lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      background: none; border: none; color: var(--white);
+      font-size: 36px; line-height: 1; cursor: pointer; opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    #lightbox-close:hover { opacity: 1; }
+    .lightbox-img { cursor: zoom-in; }
+
+  </style>
+</head>
+<body>
+
+<!-- ─── PASSWORD GATE (client-side, simple preview lock) ─── -->
+<style>
+  #pw-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #1A1A1A;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+  #pw-gate.hidden { display: none; }
+  #pw-box {
+    background: #2C2C2C; padding: 48px 40px; border-radius: 6px;
+    border-top: 4px solid #004F94;
+    width: 100%; max-width: 380px; text-align: center;
+    box-shadow: 0 12px 60px rgba(0,0,0,0.6);
+  }
+  #pw-box img { height: 38px; margin-bottom: 22px; }
+  #pw-box h2 {
+    color: #fff; font-family: 'Oswald', sans-serif;
+    font-size: 20px; font-weight: 600; margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  #pw-box p { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 24px; }
+  #pw-input {
+    width: 100%; padding: 12px 14px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 4px; color: #fff; font-size: 15px;
+    margin-bottom: 12px; outline: none;
+  }
+  #pw-input:focus { border-color: #004F94; }
+  #pw-btn {
+    width: 100%; padding: 12px;
+    background: #004F94; color: #fff;
+    border: none; border-radius: 4px; cursor: pointer;
+    font-family: 'Oswald', sans-serif; font-size: 14px;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  #pw-btn:hover { background: #003d75; }
+  #pw-error { color: #F5A623; font-size: 13px; margin-top: 10px; min-height: 18px; }
+</style>
+
+<div id="pw-gate">
+  <div id="pw-box">
+    <img src="images/Broski Logo.png" alt="Broski Fence" />
+    <h2>Site Preview</h2>
+    <p>This is a private preview. Enter the password to continue.</p>
+    <input id="pw-input" type="password" placeholder="Password" autofocus />
+    <button id="pw-btn">Enter</button>
+    <div id="pw-error"></div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    // SHA-256 of the access phrase — the phrase itself is not in this source.
+    var H = '709ee0bf8d72977bade140fa975e3da86827d229348223c8f70b56d6c24b0fd9';
+    var gate = document.getElementById('pw-gate');
+    var input = document.getElementById('pw-input');
+    var btn = document.getElementById('pw-btn');
+    var err = document.getElementById('pw-error');
+
+    async function sha256(s) {
+      var buf = new TextEncoder().encode(s);
+      var hash = await crypto.subtle.digest('SHA-256', buf);
+      return Array.from(new Uint8Array(hash))
+        .map(function (b) { return b.toString(16).padStart(2, '0'); })
+        .join('');
+    }
+
+    async function tryPw() {
+      var v = (input.value || '').trim();
+      if (!v) return;
+      var digest = await sha256(v);
+      if (digest === H) {
+        gate.classList.add('hidden');
+      } else {
+        err.textContent = 'Incorrect password.';
+        input.value = ''; input.focus();
+      }
+    }
+    btn.addEventListener('click', tryPw);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryPw(); });
+  })();
+</script>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">
+    <img src="images/Broski Logo.png" alt="Broski Fence" />
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#service-area">Service Area</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Commercial Fencing — Kansas City</span>
+    <h1>Kansas City's Commercial Fencing Experts</h1>
+    <p>Trusted by contractors, municipalities, and businesses across the KC metro for over 25 years. Chain link, wood, and metal fencing — installed right, on time.</p>
+    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    <a href="#work" class="btn btn-outline">See Our Work</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="num">25+</div>
+      <div class="lbl">Years in Kansas City</div>
+    </div>
+    <div class="stat">
+      <div class="num">Commercial</div>
+      <div class="lbl">Only — No Residential</div>
+    </div>
+    <div class="stat">
+      <div class="num">MO &amp; KS</div>
+      <div class="lbl">Both Sides of the Metro</div>
+    </div>
+    <div class="stat">
+      <div class="num">816-861-8000</div>
+      <div class="lbl">Call Us Direct</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label">What We Do</p>
+    <h2>Commercial Fencing Installation &amp; Material Sales</h2>
+    <p class="lead">We specialize exclusively in commercial fencing (no residential work). From full-scale installation to material-only sales, we serve contractors, municipalities, and businesses across Kansas City.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img class="lightbox-img" src="images/BlackChainLink1.jpeg" alt="Commercial chain link fence installation" />
+        <div class="service-card-body">
+          <span class="commercial-tag">Commercial Only</span>
+          <h3>Chain Link Fencing</h3>
+          <p>Heavy-duty chain link for job sites, industrial facilities, schools, parks, and secure perimeters. Available in multiple gauges and heights to meet any project spec.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="lightbox-img" src="images/WoodFence1.jpeg" alt="Commercial wood fence installation" />
+        <div class="service-card-body">
+          <span class="commercial-tag">Commercial Only</span>
+          <h3>Wood Fencing</h3>
+          <p>High-quality wood fencing for commercial properties, housing developments, and large-scale projects. Built for durability and a clean, professional appearance.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="lightbox-img" src="images/OrnamentalIron1.jpeg" alt="Metal and ornamental iron fence installation" />
+        <div class="service-card-body">
+          <span class="commercial-tag">Commercial Only</span>
+          <h3>Metal &amp; Ornamental Fencing</h3>
+          <p>Wrought iron, steel, and ornamental metal fencing for businesses, athletic facilities, and government projects. Strong, secure, and built to last.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="materials-callout">
+      <div>
+        <h3>Material-Only Sales</h3>
+        <p>Need materials without installation? We sell commercial-grade fencing materials directly to contractors and businesses. New materials only — no salvage or refurbished product. Reach out to discuss what you need.</p>
+      </div>
+      <a href="#contact" class="btn btn-dark" style="flex-shrink:0;">Inquire About Materials</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="who-we-serve">
+  <div class="container">
+    <p class="section-label">Who We Work With</p>
+    <h2>Built for Commercial Contractors &amp; Organizations</h2>
+    <p class="lead">We work with out-of-town GCs who need a reliable local sub, and with organizations across Kansas City that need fencing done right the first time.</p>
+    <div class="serve-grid">
+      <div class="serve-item">
+        <div class="serve-icon">🏗️</div>
+        <h4>General Contractors</h4>
+        <p>Out-of-town and local GCs who need a trusted KC fence subcontractor.</p>
+      </div>
+      <div class="serve-item">
+        <div class="serve-icon">🏙️</div>
+        <h4>Municipalities</h4>
+        <p>City and county projects requiring licensed, bonded, professional installation.</p>
+      </div>
+      <div class="serve-item">
+        <div class="serve-icon">🏫</div>
+        <h4>School Districts</h4>
+        <p>Safe, code-compliant fencing for campuses, playgrounds, and athletic areas.</p>
+      </div>
+      <div class="serve-item">
+        <div class="serve-icon">🏟️</div>
+        <h4>Athletic Complexes</h4>
+        <p>Baseball backstops, dugout fencing, outfield fencing, and facility perimeters.</p>
+      </div>
+      <div class="serve-item">
+        <div class="serve-icon">🏭</div>
+        <h4>Industrial &amp; Utilities</h4>
+        <p>Secure perimeter fencing for warehouses, plants, and utility infrastructure.</p>
+      </div>
+      <div class="serve-item">
+        <div class="serve-icon">🏢</div>
+        <h4>Businesses</h4>
+        <p>Commercial properties, parking lots, office campuses, and retail facilities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK EXAMPLES -->
+<section id="work">
+  <div class="container">
+    <p class="section-label">Recent Projects</p>
+    <h2>Work Across the Kansas City Metro</h2>
+    <p class="lead">From chain link perimeters at major KC venues to ornamental fencing for school campuses — we get the job done.</p>
+    <div class="work-grid">
+      <div class="work-item large">
+        <img class="lightbox-img" src="images/ChainLink1.jpeg" alt="Chain link fence at Kauffman Stadium, Kansas City" />
+      </div>
+      <div class="work-item">
+        <img class="lightbox-img" src="images/Ornamental_IronGate.jpg" alt="Ornamental iron gate installation" />
+      </div>
+      <div class="work-item">
+        <img class="lightbox-img" src="images/BackstopNet.jpeg" alt="Athletic backstop and sports fencing" />
+      </div>
+      <div class="work-item">
+        <img class="lightbox-img" src="images/ChainLinkGates.jpeg" alt="Commercial chain link gates" />
+      </div>
+      <div class="work-item">
+        <img class="lightbox-img" src="images/TrashGate.PNG" alt="Commercial access gate" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="service-area">
+  <div class="container">
+    <div class="area-layout">
+      <div>
+        <p class="section-label">Service Area</p>
+        <h2>Serving Greater Kansas City — Missouri &amp; Kansas</h2>
+        <p style="font-size:16px;color:var(--mid);line-height:1.75;">We cover the entire KC metro on both sides of the state line. If your project is in the greater Kansas City region, we can do the job.</p>
+        <ul class="city-list">
+          <li>Kansas City, MO</li>
+          <li>Kansas City, KS</li>
+          <li>Overland Park</li>
+          <li>Olathe</li>
+          <li>Lenexa</li>
+          <li>Shawnee</li>
+          <li>Independence</li>
+          <li>Lee's Summit</li>
+          <li>Blue Springs</li>
+          <li>Liberty</li>
+          <li>And surrounding areas</li>
+        </ul>
+      </div>
+      <div class="area-cta-box">
+        <h3>Working on a project in KC?</h3>
+        <p>Whether you're a GC coming in from out of town or a local business, we're your fence sub. Get in touch and we'll respond quickly.</p>
+        <a href="#contact" class="btn btn-white">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-img">
+        <img class="lightbox-img" src="images/ChainLink2.jpeg" alt="Broski Fence — commercial fencing job site" />
+      </div>
+      <div class="about-copy">
+        <p class="section-label">About Broski Fence</p>
+        <h2>25+ Years. Commercial Only. Kansas City Proud.</h2>
+        <p>Broski Fence has been serving the Kansas City metro for over 25 years. We focus exclusively on commercial work — installation and material sales — for contractors, municipalities, school districts, businesses, and industrial clients who demand quality and reliability.</p>
+        <p>We're not a backyard fence company. We're the subcontractor that out-of-town GCs trust when they need a job done right in KC — hassle-free installs, quality materials, and a team that knows this market inside and out.</p>
+        <div class="about-badge">
+          <div class="badge-num">25+</div>
+          <div class="badge-text">Years Serving<br/>Kansas City</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2>Ready to Talk About Your Project?</h2>
+    <p class="lead">We work with contractors, municipalities, businesses, and organizations across KC. Reach out and we'll get back to you quickly.</p>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <p><a href="tel:8168618000">(816) 861-8000</a></p>
+        </div>
+        <div class="contact-block">
+          <h4>Email</h4>
+          <!-- Confirm info@broskifence.com with Will before launch -->
+          <p><a href="mailto:info@broskifence.com">info@broskifence.com</a></p>
+        </div>
+        <div class="contact-block">
+          <h4>Address</h4>
+          <p>3900 Bennington Avenue<br/>Kansas City, MO 64129</p>
+        </div>
+        <div class="contact-block">
+          <h4>Service Area</h4>
+          <p>Greater Kansas City Metro<br/>Missouri &amp; Kansas</p>
+        </div>
+        <div class="contact-note">
+          <strong style="color:var(--white);">Commercial inquiries only.</strong> We do not take residential projects. If you're a contractor or business, we'd love to hear from you.
+        </div>
+      </div>
+      <!-- Form: replace action with Formspree or similar before launch -->
+      <!-- Material Sales inquiries currently route to same form — update action to Gerald's email once confirmed -->
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="text" name="company" placeholder="Company / Organization" />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <select name="inquiry_type">
+          <option value="" disabled selected>Type of Inquiry</option>
+          <option value="installation">Installation Quote</option>
+          <option value="materials">Material Sales</option>
+          <option value="general">General Question</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your project — location, type of fencing, timeline..."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img class="logo" src="images/Broski Logo.png" alt="Broski Fence" />
+    <div class="footer-nav">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#service-area">Service Area</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2026 Broski Fence. All rights reserved.</p>
+      <p><a href="tel:8168618000">(816) 861-8000</a> &nbsp;|&nbsp; Kansas City, MO</p>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.lightbox-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('active');
+    });
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', () => lb.classList.remove('active'));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('active'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('active'); });
+</script>
+
+</body>
+</html>
