@@ -113,7 +113,6 @@
     .btn-dark:hover { background: var(--charcoal); }
 
     .hero-stats {
-      position: absolute; bottom: 0; left: 0; right: 0;
       background: var(--blue-dk); display: flex; justify-content: center;
     }
     .hero-stats .stat {
@@ -351,12 +350,16 @@
         border-bottom: 1px solid rgba(255,255,255,0.07);
       }
       .nav-cta { margin: 12px 24px 4px; text-align: center; border-radius: 3px; }
+      .hero h1 { font-size: clamp(36px, 9vw, 54px); }
+      .hero p { font-size: 16px; }
       .hero-stats { flex-wrap: wrap; }
       .hero-stats .stat {
         flex: 1 1 50%; border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.15);
         padding: 14px 16px;
       }
+      .hero-stats .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.2); }
+      .hero-stats .stat:nth-last-child(-n+2) { border-bottom: none; }
       .work-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .work-grid .work-item { height: 180px; }
       .work-item.large { grid-column: span 2; height: 220px; }
@@ -507,25 +510,27 @@
     <a href="#contact" class="btn btn-primary">Request a Quote</a>
     <a href="#work" class="btn btn-outline">See Our Work</a>
   </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="num">25+</div>
-      <div class="lbl">Years in Kansas City</div>
-    </div>
-    <div class="stat">
-      <div class="num">Commercial</div>
-      <div class="lbl">Only — No Residential</div>
-    </div>
-    <div class="stat">
-      <div class="num">MO &amp; KS</div>
-      <div class="lbl">Both Sides of the Metro</div>
-    </div>
-    <div class="stat">
-      <div class="num">816-861-8000</div>
-      <div class="lbl">Call Us Direct</div>
-    </div>
-  </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="hero-stats">
+  <div class="stat">
+    <div class="num">25+</div>
+    <div class="lbl">Years in Kansas City</div>
+  </div>
+  <div class="stat">
+    <div class="num">Commercial</div>
+    <div class="lbl">Only — No Residential</div>
+  </div>
+  <div class="stat">
+    <div class="num">MO &amp; KS</div>
+    <div class="lbl">Both Sides of the Metro</div>
+  </div>
+  <div class="stat">
+    <div class="num">816-861-8000</div>
+    <div class="lbl">Call Us Direct</div>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section id="services">
