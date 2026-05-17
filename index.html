@@ -712,9 +712,10 @@
           <strong style="color:var(--white);">Commercial inquiries only.</strong> We do not take residential projects. If you're a contractor or business, we'd love to hear from you.
         </div>
       </div>
-      <!-- Form: replace action with Formspree or similar before launch -->
-      <!-- Material Sales inquiries currently route to same form — update action to Gerald's email once confirmed -->
-      <form action="#" method="post">
+      <!-- Material Sales inquiries currently route to same form — update access_key or add redirect once Gerald's email is confirmed -->
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="8806c65b-348b-4dae-a6b5-9d4a46db609d">
+        <input type="hidden" name="redirect" value="https://www.broskifence.com/thankyou.html">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="text" name="company" placeholder="Company / Organization" />
         <input type="email" name="email" placeholder="Email Address" required />

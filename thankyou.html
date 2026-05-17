@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Broski Fence</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:     #004F94;
+      --blue-dk:  #003d75;
+      --gold:     #F5A623;
+      --dark:     #1A1A1A;
+      --charcoal: #2C2C2C;
+      --light:    #F5F5F5;
+      --white:    #ffffff;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: rgba(26,26,26,0.97);
+      display: flex; align-items: center;
+      padding: 14px 40px;
+    }
+    nav img { height: 42px; display: block; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-top: 4px solid var(--blue);
+      border-radius: 4px;
+      max-width: 560px;
+      width: 100%;
+      padding: 56px 48px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .checkmark {
+      width: 64px; height: 64px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .checkmark svg { width: 32px; height: 32px; }
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px; font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px; line-height: 1.65;
+      color: #555;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-block; text-decoration: none;
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: 15px; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 15px 40px; border-radius: 3px;
+      background: var(--blue); color: var(--white);
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--blue-dk); }
+
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      font-size: 13px;
+      padding: 20px 24px;
+    }
+
+    @media (max-width: 560px) {
+      nav { padding: 14px 20px; }
+      .card { padding: 40px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/"><img src="images/broski-logo.png" alt="Broski Fence" /></a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <div class="checkmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h1>Message Received</h1>
+      <p>Thanks for reaching out. We'll review your project details and get back to you within one business day.</p>
+      <a href="/" class="btn">Back to Home</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> Broski Fence &mdash; Kansas City Commercial Fencing &mdash; 816-861-8000
+  </footer>
+
+</body>
+</html>
